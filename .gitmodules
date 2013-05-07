@@ -1,0 +1,3 @@
+[submodule "modules/sqlite"]
+	path = modules/sqlite
+	url = git://github.com/puppetlabs/puppetlabs-sqlite.git
