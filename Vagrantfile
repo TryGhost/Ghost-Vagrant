@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-GhostSourcePath = "../Ghost-Web"
+GhostSourcePath = "../Ghost"
 
 Vagrant.configure("2") do |config|
   # All Vagrant configuration is done here. The most common configuration
@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
 
   # NOTE: This should match your path to the Ghost source
-  config.vm.synced_folder GhostSourcePath, "/Ghost-Web"
+  config.vm.synced_folder GhostSourcePath, "/Ghost"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
