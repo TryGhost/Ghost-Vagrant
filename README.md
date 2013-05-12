@@ -9,6 +9,7 @@ Vagrant setup for developing Ghost
 - Clone this repo
 - Edit the `Vagrantfile` in the root
     - Change your `GhostSourcePath` to match your environment
+- Edit your machines `hosts` file add `192.168.33.10 local.tryghost.org`
 - Run `vagrant up` from the root of the cloned repo.
 - Login to the VM with `vagrant ssh`
 - Change to the Ghost source directory: `cd /Ghost`
