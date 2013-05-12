@@ -9,10 +9,24 @@ Vagrant setup for developing Ghost
 - Clone this repo
 - Edit the `Vagrantfile` in the root
     - Change your `GhostSourcePath` to match your environment
+- Edit your machines `hosts` file add `192.168.33.10 local.tryghost.org`
 - Run `vagrant up` from the root of the cloned repo.
-- Edit your `hosts` file, add an entry for `local.tryghost.org` pointing to `192.168.33.10`
 - Login to the VM with `vagrant ssh`
-- Run the Ghost App with `cd /Ghost-Web && node index.js`
+- Change to the Ghost source directory: `cd /Ghost`
+- Install git submodules: `git submodule init && git submodule update`
+- Install dependencies: `npm install`
+- Build Admin styles: `cd core/admin/styles && compass compile --css-dir=css`
+- Run the Ghost App: `cd /Ghost && node app.js`
+
+### Updating Virtual Box Guest Additions
+
+The packaged vagrant box from Ubuntu contains outdated Virtual Box Guest Additions.  Most of the time this shouldn't be a problem, but if you want to update them I recommend this procedure:
+
+1. Install the [vagrant-vbguest plugin](https://github.com/dotless-de/vagrant-vbguest): `vagrant plugin install vagrant-vbguest`
+1. Boot the vm without provisioning: `vagrant up --no-provision`
+1. Login with `vagrant ssh` and run `sudo apt-get -y -q purge virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11`
+1. Logout and `vagrant halt`
+1. `vagrant up`
 
 ### License
 
