@@ -28,7 +28,8 @@ class ghost($node_version = "v0.10.5") {
     # Global npm modules  
     npm { ["grunt-cli",
            "sass",
-           "compass"]:
+           "compass",
+           "mocha"]:
     }
     
     # Examples of installing packages from a package.json if we need to.
