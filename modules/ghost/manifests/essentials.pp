@@ -7,7 +7,7 @@ class essentials {
   }
 
   Package { ensure => installed }
-  
+
   package {
     ["curl",
     "libssl-dev",
@@ -19,7 +19,7 @@ class essentials {
 
   # Ruby modules for general development
   package {
-    ["sass", "compass"]:
+    ["sass", "bourbon"]:
       provider => "gem"
   }
 

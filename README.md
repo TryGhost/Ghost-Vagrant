@@ -3,6 +3,13 @@ Ghost-Vagrant
 
 Vagrant setup for developing Ghost
 
+### Changelog
+
+#### 1.1
+
+- changed compass to bourbon as an automatic gem install
+- NOTE: be sure to install the Guest Additions bit
+
 ### Instructions
 
 - Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant 1.2.2](http://downloads.vagrantup.com/tags/v1.2.2)
@@ -15,8 +22,9 @@ Vagrant setup for developing Ghost
 - Change to the Ghost source directory: `cd /Ghost`
 - Install git submodules: `git submodule init && git submodule update`
 - Install dependencies: `npm install`
-- Build Admin styles: `cd core/admin/styles && compass compile --css-dir=css`
+- Build Admin styles: `grunt init`
 - Run the Ghost App: `cd /Ghost && node app.js`
+- Validate code: `grunt validate`
 
 ### Updating Virtual Box Guest Additions
 

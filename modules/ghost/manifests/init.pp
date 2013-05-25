@@ -6,7 +6,7 @@ class ghost($node_version = "v0.10.5") {
     # Base packages and ruby gems (sass, compass)
     class { essentials: }
 
-    class { nginx: 
+    class { nginx:
         require => [Class["essentials"]]
     }
 
@@ -24,14 +24,13 @@ class ghost($node_version = "v0.10.5") {
         require => Exec['install-node'],
       }
     }
-    
-    # Global npm modules  
+
+    # Global npm modules
     npm { ["grunt-cli",
            "sass",
-           "compass",
-           "mocha"]:
+           "mocha" ]:
     }
-    
+
     # Examples of installing packages from a package.json if we need to.
     #exec { "npm-install-packages":
     #  cwd => "/home/vagrant/",
