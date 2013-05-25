@@ -3,6 +3,14 @@ Ghost-Vagrant
 
 Vagrant setup for developing Ghost
 
+### Changelog
+
+#### 0.1
+
+- added completely arbitrary version number here
+- changed compass to bourbon as an automatic gem install
+- be sure to install the Guest Additions bit
+
 ### Instructions
 
 - Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant 1.2.2](http://downloads.vagrantup.com/tags/v1.2.2)
