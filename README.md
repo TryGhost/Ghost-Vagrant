@@ -5,7 +5,7 @@ Vagrant setup for developing Ghost
 
 ### Changelog
 
-#### 0.1
+#### 1.1
 
 - added completely arbitrary version number here
 - changed compass to bourbon as an automatic gem install
