@@ -5,7 +5,7 @@ file { '/etc/motd':
 	content => "
       .-----.
     .' -   - '.       Ghost Dev VM
-   /  .-. .-.  \\      - Version 1.0 (Casper)
+   /  .-. .-.  \\      - Version 1.1 (Casper)
    |  | | | |  |
     \\ \\o/ \\o/ /
    _/    ^    \\_
