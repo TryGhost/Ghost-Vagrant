@@ -7,9 +7,8 @@ Vagrant setup for developing Ghost
 
 #### 1.1
 
-- added completely arbitrary version number here
 - changed compass to bourbon as an automatic gem install
-- be sure to install the Guest Additions bit
+- NOTE: be sure to install the Guest Additions bit
 
 ### Instructions
 
