@@ -22,8 +22,9 @@ Vagrant setup for developing Ghost
 - Change to the Ghost source directory: `cd /Ghost`
 - Install git submodules: `git submodule init && git submodule update`
 - Install dependencies: `npm install`
-- Build Admin styles: `cd core/admin/styles && compass compile --css-dir=css`
+- Build Admin styles: `grunt init`
 - Run the Ghost App: `cd /Ghost && node app.js`
+- Validate code: `grunt validate`
 
 ### Updating Virtual Box Guest Additions
 
