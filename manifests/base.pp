@@ -5,12 +5,12 @@ file { '/etc/motd':
 	content => "
       .-----.
     .' -   - '.       Ghost Dev VM
-   /  .-. .-.  \\      - Version 1.1 (Casper)
-   |  | | | |  |
-    \\ \\o/ \\o/ /
-   _/    ^    \\_
-  | \\  '---'  / |
-  / /`--. .--`\\ \\
+   /  .-. .-.  \\      - Version: 1.2 (Casper)
+   |  | | | |  |       
+    \\ \\o/ \\o/ /       - OS:      Ubuntu precise-server-cloudimg-amd64
+   _/    ^    \\_      - Node:    ${node_version}
+  | \\  '---'  / |     - IP:      192.168.33.10
+  / /`--. .--`\\ \\     - Code:    ~/code/Ghost
  / /'---` `---'\\ \\
  '.__.       .__.'
      `|     |`

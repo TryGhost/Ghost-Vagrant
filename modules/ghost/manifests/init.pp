@@ -31,6 +31,13 @@ class ghost($node_version = "v0.10.5") {
            "mocha" ]:
     }
 
+    # Make sure our code directory has proper permissions
+    file { '/home/vagrant/code':
+        ensure => "directory",
+        owner  => "vagrant",
+        group  => "vagrant"
+    }
+
     # Examples of installing packages from a package.json if we need to.
     #exec { "npm-install-packages":
     #  cwd => "/home/vagrant/",
