@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
 
   # NOTE: This should match your path to the Ghost source
-  config.vm.synced_folder GhostSourcePath, "/Ghost"
+  config.vm.synced_folder GhostSourcePath, "/home/vagrant/code/Ghost"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.

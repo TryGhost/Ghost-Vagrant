@@ -5,6 +5,10 @@ Vagrant setup for developing Ghost
 
 ### Changelog
 
+#### 1.2
+
+- changed the Ghost shared folder path to `/home/vagrant/code/Ghost`
+
 #### 1.1
 
 - changed compass to bourbon as an automatic gem install
@@ -19,11 +23,11 @@ Vagrant setup for developing Ghost
 - Edit your machines `hosts` file add `192.168.33.10 local.tryghost.org`
 - Run `vagrant up` from the root of the cloned repo.
 - Login to the VM with `vagrant ssh`
-- Change to the Ghost source directory: `cd /Ghost`
-- Install git submodules: `git submodule init && git submodule update`
+- Change to the Ghost source directory: `cd code/Ghost`
+- Install git submodules: `git submodule update --recurse`
 - Install dependencies: `npm install`
 - Build Admin styles: `grunt init`
-- Run the Ghost App: `cd /Ghost && node app.js`
+- Run the Ghost App: `node app.js`
 - Validate code: `grunt validate`
 
 ### Updating Virtual Box Guest Additions
