@@ -1,16 +1,15 @@
-Ghost-Vagrant
-=============
+#Ghost-Vagrant
 
 Vagrant setup for developing Ghost
 
-### Changelog
+## Changelog
 
-#### 1.1
+### 1.1
 
 - changed compass to bourbon as an automatic gem install
 - NOTE: be sure to install the Guest Additions bit
 
-### Instructions
+## Instructions
 
 - Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant 1.2.2](http://downloads.vagrantup.com/tags/v1.2.2)
 - Clone this repo
@@ -26,7 +25,7 @@ Vagrant setup for developing Ghost
 - Run the Ghost App: `cd /Ghost && node app.js`
 - Validate code: `grunt validate`
 
-### Updating Virtual Box Guest Additions
+## Updating Virtual Box Guest Additions
 
 The packaged vagrant box from Ubuntu contains outdated Virtual Box Guest Additions.  Most of the time this shouldn't be a problem, but if you want to update them I recommend this procedure:
 
@@ -36,6 +35,13 @@ The packaged vagrant box from Ubuntu contains outdated Virtual Box Guest Additio
 1. Logout and `vagrant halt`
 1. `vagrant up`
 
-### License
+## Copyright & License
 
-Copyright 2013 Ghost
+Copyright (C) 2013 The Ghost Foundation - Released under the MIT Lincense.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
