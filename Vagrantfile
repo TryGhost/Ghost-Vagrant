@@ -51,6 +51,9 @@ Vagrant.configure("2") do |config|
     # To add cores
     #vb.customize ["modifyvm", :id, "--cpus", "4"]
     #vb.customize ["modifyvm", :id, "--ioapic", "on"]
+
+    # Via http://blog.liip.ch/archive/2012/07/25/vagrant-and-node-js-quick-tip.html
+    vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
   end
   #
   # View the documentation for the provider you're using for more
