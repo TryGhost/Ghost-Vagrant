@@ -1,12 +1,16 @@
 
-class ghost($node_version = "v0.10.5") {
+class ghost($node_version = "v0.10.5", $secure_site = 'false', $user_file_path = '', $user_name = 'ghost', $user_pass = 'ghost') {
     # Add some default path values
     Exec { path => ['/usr/local/bin','/usr/local/sbin','/usr/bin/','/usr/sbin','/bin','/sbin', "/home/vagrant/nvm/${node_version}/bin"], }
 
     # Base packages and ruby gems (sass, compass)
     class { essentials: }
 
-    class { nginx:
+    class { 'nginx':
+        secure_site => $secure_site,
+        user_file_path => $user_file_path,
+        user_name => $user_name,
+        user_pass => $user_pass,
         require => [Class["essentials"]]
     }
 

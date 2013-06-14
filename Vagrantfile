@@ -67,5 +67,13 @@ Vagrant.configure("2") do |config|
     puppet.manifests_path = "manifests"
     puppet.manifest_file  = "base.pp"
     puppet.module_path = "modules"
+
+    puppet.facter = {
+        # Secure the test site
+        "secure_site" => 'false',
+        "user_file_path" => '/home/vagrant/.htpasswd',
+        'user_name' => 'ghost',
+        'user_pass' => 'ghost'
+      }
   end
 end
