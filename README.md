@@ -8,6 +8,10 @@ Vagrant setup for developing Ghost
 
 - changed the Ghost shared folder path to `/home/vagrant/code/Ghost`
 
+#### 1.2
+
+- changed the Ghost shared folder path to `/home/vagrant/code/Ghost`
+
 #### 1.1
 
 - changed compass to bourbon as an automatic gem install
