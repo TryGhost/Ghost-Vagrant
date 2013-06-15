@@ -4,20 +4,22 @@ Vagrant setup for developing Ghost
 
 ## Changelog
 
+#### 1.3
+
+- allow option to secure site with basic auth through nginx
+- ec2 provisioning
+
 #### 1.2
 
 - changed the Ghost shared folder path to `/home/vagrant/code/Ghost`
-
-#### 1.2
-
-- changed the Ghost shared folder path to `/home/vagrant/code/Ghost`
+- added some info to the MOTD
 
 #### 1.1
 
 - changed compass to bourbon as an automatic gem install
 - NOTE: be sure to install the Guest Additions bit
 
-## Instructions
+## Instructions for Ghost Development
 
 - Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant 1.2.2](http://downloads.vagrantup.com/tags/v1.2.2)
 - Clone this repo
@@ -42,6 +44,28 @@ The packaged vagrant box from Ubuntu contains outdated Virtual Box Guest Additio
 1. Login with `vagrant ssh` and run `sudo apt-get -y -q purge virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11`
 1. Logout and `vagrant halt`
 1. `vagrant up`
+
+## Instructions for Deploying to EC2
+
+**NOTE**: Because of a limitation of the current version of Vagrant, you must check out the repo into a different directory than your development vm when deploying.
+
+- Setup an Amazon AWS EC2 account and save the access key and secret key.
+- [Create a deployment key pair](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-keypair.html)
+- Make sure the Amazon deploy key pair is in `~/.ssh/ghostdeploy.pem`
+- Install the [vagrant-aws](https://github.com/mitchellh/vagrant-aws) plugin: 
+	- `vagrant plugin install vagrant-aws`
+- Set some deployment environment variables:
+	- `export AWS_ACCESS_KEY=<access_key>` (use `set` if on Windows)
+	- `export AWS_SECRET_KEY=<secret_key>`
+	- `export GHOST_PASSWORD=<password>`
+- Kick off the deploy:
+	- `vagrant up --provider=aws`
+- Log in and start the site, but first have to re-install modules built for ec2 instance
+	- `vagrant ssh`
+	- `cd code/Ghost && rm -rf node_modules && npm install`
+	- `sudo start ghost`
+- Navigate to the public hostname of the ec2 instance to view the site
+	- `ec2metadata --public-hostname`
 
 ## Copyright & License
 

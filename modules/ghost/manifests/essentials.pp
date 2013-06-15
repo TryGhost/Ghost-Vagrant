@@ -23,7 +23,8 @@ class essentials {
       provider => "gem"
   }
 
-  file { "/home/vagrant/scripts":
+  file { "scripts_folder":
+    path => "/home/${os_user_name}/scripts",
     ensure => "directory"
   }
 

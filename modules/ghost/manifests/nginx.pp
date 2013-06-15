@@ -1,7 +1,7 @@
-class nginx($secure_site = 'false', $user_file_path = '/home/vagrant/.htpasswd', $user_name = 'ghost', $user_pass = 'ghost') {
+class nginx($secure_site = 'false', $user_file_path = "/home/ubuntu/.htpasswd", $user_name = 'ghost', $user_pass = 'ghost') {
 
   # Not sure if this is necessary in here
-  Exec { path => ['/usr/local/bin','/usr/local/sbin','/usr/bin/','/usr/sbin','/bin','/sbin', "/home/vagrant/nvm/${ghost::node_version}/bin"], }
+  Exec { path => ['/usr/local/bin','/usr/local/sbin','/usr/bin/','/usr/sbin','/bin','/sbin', "/home/${os_user_name}/nvm/${ghost::node_version}/bin"], }
 
   package { "nginx":
     ensure => installed,
@@ -16,10 +16,10 @@ class nginx($secure_site = 'false', $user_file_path = '/home/vagrant/.htpasswd',
   }
 
   file { 'nginx-htpasswd':
-    path => "/home/vagrant/scripts/htpasswd.py",
+    path => "/home/${os_user_name}/scripts/htpasswd.py",
     source => "puppet:///modules/ghost/script/htpasswd.py",
-    owner => "vagrant",
-    group => "vagrant",
+    owner => "${os_user_name}",
+    group => "${os_user_name}",
     mode => 755,
     before => [File['nginx-conf']]
   }
@@ -28,13 +28,13 @@ class nginx($secure_site = 'false', $user_file_path = '/home/vagrant/.htpasswd',
     file { 'nginx-userfile': 
       path => "${nginx::user_file_path}",
       ensure => "present",
-      owner => "vagrant",
-      group => "vagrant",
+      owner => "${os_user_name}",
+      group => "${os_user_name}",
       before => [Exec['set-site-credentials']]
     }
 
     exec { 'set-site-credentials':
-      command => "/home/vagrant/scripts/htpasswd.py -b ${nginx::user_file_path} ${nginx::user_name} ${nginx::user_pass}",
+      command => "/home/${os_user_name}/scripts/htpasswd.py -b ${nginx::user_file_path} ${nginx::user_name} ${nginx::user_pass}",
     }
   }
 
