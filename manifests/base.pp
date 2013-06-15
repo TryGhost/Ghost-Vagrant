@@ -25,6 +25,10 @@ file { '/etc/motd':
 
 # Make all the magic happen by instantiating the ghost class
 class { ghost:
-	node_version => $node_version
+	node_version => $node_version,
+  secure_site => $secure_site,
+  user_file_path => $user_file_path,
+  user_name => $user_name,
+  user_pass => $user_pass
 }
 

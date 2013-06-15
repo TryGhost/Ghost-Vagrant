@@ -4,6 +4,11 @@ upstream ghostweb {
 
 server {
   keepalive_timeout 5;
+  <%- if @secure_site == 'true' -%>
+  auth_basic "Restricted Access";
+  auth_basic_user_file <%= @user_file_path %>;
+  <%- end -%>
+
   location / {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header Host $http_host;

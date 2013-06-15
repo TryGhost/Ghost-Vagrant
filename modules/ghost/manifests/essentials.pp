@@ -23,6 +23,11 @@ class essentials {
       provider => "gem"
   }
 
+  file { "scripts_folder":
+    path => "/home/${os_user_name}/scripts",
+    ensure => "directory"
+  }
+
   #file { "/usr/local":
   #  recurse => true,
   #  group => "vagrant",
