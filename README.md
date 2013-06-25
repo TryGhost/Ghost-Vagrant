@@ -24,7 +24,7 @@ Vagrant setup for developing Ghost
 - Login to the VM with `vagrant ssh`
 - Change to the Ghost source directory: `cd code/Ghost`
 - Install git submodules: `git submodule update --recurse`
-- Install dependencies: `npm install`
+- Install dependencies: `rm -rf node_modules/ && npm install`
 - Build Admin styles: `grunt init`
 - Run the Ghost App: `node app.js`
 - Validate code: `grunt validate`
