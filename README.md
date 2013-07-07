@@ -26,7 +26,7 @@ Vagrant setup for developing Ghost
 - Install git submodules: `git submodule update --recursive`
 - Install dependencies: `npm install`
 - Build Admin styles: `grunt init`
-- Run the Ghost App: `node app.js`
+- Run the Ghost App: `node index.js` or `npm start`
 - Validate code: `grunt validate`
 
 ## Updating Virtual Box Guest Additions
