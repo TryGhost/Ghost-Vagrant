@@ -6,7 +6,13 @@ class ghost($node_version = "v0.10.5") {
     # Base packages and ruby gems (sass, compass)
     class { essentials: }
 
+    # Install and setup nginx web server
     class { nginx:
+        require => [Class["essentials"]]
+    }
+
+    # Install and setup phantomjs and casperjs
+    class { casperjs:
         require => [Class["essentials"]]
     }
 

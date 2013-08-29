@@ -23,6 +23,10 @@ class essentials {
       provider => "gem"
   }
 
+  file { "/home/vagrant/software":
+    ensure => "directory",
+  }
+
   #file { "/usr/local":
   #  recurse => true,
   #  group => "vagrant",

@@ -4,7 +4,7 @@ class nginx {
     before => File['nginx-conf'];
   }
   
-  service { 'nginx' :
+  service { 'nginx':
     ensure => running,
     enable => true,
     hasrestart => true,
