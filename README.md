@@ -16,6 +16,7 @@ Vagrant setup for developing Ghost
 ## Instructions
 
 - Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant 1.2.2](http://downloads.vagrantup.com/tags/v1.2.2)
+- *Linux Users:* Install an NFS daemon, e.g. `apt-get install nfs-kernel-server` 
 - Clone this repo
 - Edit the `Vagrantfile` in the root
     - Change your `GhostSourcePath` to match your environment
