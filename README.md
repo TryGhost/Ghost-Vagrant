@@ -24,7 +24,7 @@ Vagrant setup for developing Ghost
 - Run `vagrant up` from the root of the cloned repo.
 - Login to the VM with `vagrant ssh`
 - Change to the Ghost source directory: `cd code/Ghost`
-- Install git submodules: `git submodule init && git submodule update --recursive`
+- Install git submodules: `git submodule update --init --recursive`
 - Edit the `config.js` in `code/Ghost`
     - change the `url` value in `development` to `http://local.tryhost.org`
 - Install dependencies: `npm install`
