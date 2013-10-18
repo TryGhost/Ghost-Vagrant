@@ -1,6 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# NOTE: This should match your path to the Ghost source
 GhostSourcePath = "../Ghost"
 
 Vagrant.configure("2") do |config|
@@ -34,8 +35,6 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-
-  # NOTE: This should match your path to the Ghost source
   config.vm.synced_folder GhostSourcePath, "/home/vagrant/code/Ghost", :nfs => true
 
   # Provider-specific configuration so you can fine-tune various
