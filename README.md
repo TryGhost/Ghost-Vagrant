@@ -38,7 +38,7 @@ The packaged vagrant box from Ubuntu contains outdated Virtual Box Guest Additio
 1. Boot the vm without provisioning: `vagrant up --no-provision`
 1. Login with `vagrant ssh` and run `sudo apt-get -y -q purge virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11`
 1. Logout and `vagrant halt`
-1. `vagrant up`
+1. `vagrant up --provision`
 
 ## Copyright & License
 
