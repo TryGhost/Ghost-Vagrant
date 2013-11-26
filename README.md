@@ -22,13 +22,8 @@ Vagrant setup for developing Ghost
     - Change your `GhostSourcePath` to match your environment
 - Edit your machines `hosts` file add `192.168.33.10 local.tryghost.org`
 - Run `vagrant up` from the root of the cloned repo.
-- Login to the VM with `vagrant ssh`
-- Change to the Ghost source directory: `cd code/Ghost`
-- Install git submodules: `git submodule update --init --recursive`
-- Install dependencies: `npm install`
-- Build Admin styles: `grunt init`
-- Run the Ghost App: `node index.js` or `npm start`
-- Validate code: `grunt validate`
+- This will automatically start ghost at `local.tryghost.org`
+- To validate code, navigate to the Ghost code (`cd code/Ghost`) and run `grunt validate`.
 
 ## Updating Virtual Box Guest Additions
 
