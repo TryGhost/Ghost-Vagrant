@@ -19,6 +19,16 @@ class nvm ($node_version) {
     timeout => 0,
   }
 
+  # Ensure proper permissions for nvm (and node in general)
+  file { "set-node-permissions":
+    path => "/home/vagrant/nvm/${node_version}", 
+    ensure => "directory",
+    recurse => true,
+    owner  => "vagrant",
+    group  => "vagrant",
+    require => [Exec['install-node']]
+  }
+
   exec { "clone-nvm":
     command => "git clone git://github.com/creationix/nvm.git /home/vagrant/nvm",
     user => "vagrant",
