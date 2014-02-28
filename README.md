@@ -18,6 +18,9 @@ Vagrant setup for developing Ghost
 - Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant 1.2.2](http://downloads.vagrantup.com/tags/v1.2.2)
 - *Linux Users:* Install an NFS daemon, e.g. `apt-get install nfs-kernel-server` 
 - Clone this repo
+- Initialise and fetch submodules
+    - `git submodule init`
+    - `git submodule update --recursive`
 - Edit the `Vagrantfile` in the root
     - Change your `GhostSourcePath` to match your environment
 - Edit your machines `hosts` file add `192.168.33.10 local.tryghost.org`
