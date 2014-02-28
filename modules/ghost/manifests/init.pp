@@ -1,5 +1,5 @@
 
-class ghost($node_version = "v0.10.5") {
+class ghost($node_version = "v0.10.26") {
     # Add some default path values
     Exec { path => ['/usr/local/bin','/usr/local/sbin','/usr/bin/','/usr/sbin','/bin','/sbin', "/home/vagrant/nvm/${node_version}/bin"], }
 
@@ -18,6 +18,7 @@ class ghost($node_version = "v0.10.5") {
     }
 
     class { upstart:
+        node_version => $node_version,
         require => [Class["essentials"]]
     }
 
