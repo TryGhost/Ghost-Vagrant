@@ -1,5 +1,5 @@
 
-class ghost($node_version = "v0.10.26") {
+class ghost($node_version = "v0.10.32") {
     # Add some default path values
     Exec { path => ['/usr/local/bin','/usr/local/sbin','/usr/bin/','/usr/sbin','/bin','/sbin', "/home/vagrant/nvm/${node_version}/bin"], }
 
@@ -9,7 +9,7 @@ class ghost($node_version = "v0.10.26") {
 
     Exec["apt-update"] -> Package <| |>
 
-    # Base packages and ruby gems (sass, compass)
+    # Base packages
     class { essentials: }
 
     # Install and setup nginx web server
