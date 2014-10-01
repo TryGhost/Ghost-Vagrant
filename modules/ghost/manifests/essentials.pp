@@ -17,12 +17,6 @@ class essentials {
     ]:
   }
 
-  # Ruby modules for general development
-  package {
-    ["sass", "bourbon"]:
-      provider => "gem"
-  }
-
   file { "/home/vagrant/software":
     ensure => "directory",
   }
