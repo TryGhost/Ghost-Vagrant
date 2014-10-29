@@ -4,6 +4,10 @@ Vagrant setup for developing Ghost
 
 ## Changelog
 
+#### 2.0
+
+- use Ubuntu 14.04 (LTS) image
+
 #### 1.2
 
 - changed the Ghost shared folder path to `/home/vagrant/code/Ghost`
