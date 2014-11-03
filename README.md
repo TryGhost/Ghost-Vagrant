@@ -32,15 +32,11 @@ Vagrant setup for developing Ghost
 - This will automatically start ghost at `local.tryghost.org`
 - To validate code, navigate to the Ghost code (`cd code/Ghost`) and run `grunt validate`.
 
-## Updating Virtual Box Guest Additions
+## Post-Installation Configuration
 
-The packaged vagrant box from Ubuntu contains outdated Virtual Box Guest Additions.  Most of the time this shouldn't be a problem, but if you want to update them I recommend this procedure:
+- To connect to the Ghost-Vagrant virtual machine run `vagrant ssh` from the root of the cloned repo.
 
-1. Install the [vagrant-vbguest plugin](https://github.com/dotless-de/vagrant-vbguest): `vagrant plugin install vagrant-vbguest`
-1. Boot the vm without provisioning: `vagrant up --no-provision`
-1. Login with `vagrant ssh` and run `sudo apt-get -y -q purge virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11`
-1. Logout and `vagrant halt`
-1. `vagrant up --provision`
+- Ghost-Vagrant comes with an Upstart job to automatically start Ghost.  It can be stopped and started by running the commands `sudo stop app` and `sudo start app` respectively.  If you would prefer Ghost not be automatically started you can accomplish this by running the command `echo manual | sudo tee --append /etc/init/app.conf`
 
 ## Copyright & License
 
