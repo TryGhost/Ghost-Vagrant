@@ -38,6 +38,11 @@ class ghost($node_version = "v0.10.33") {
 
     }
 
+    # Set up PostgreSQL
+    class { 'postgresql':
+
+    }
+
     # This function depends on some commands in the nvm.pp file
     define npm( $directory="/home/vagrant/nvm/${ghost::node_version}/lib/node_modules" ) {
       exec { "install-${name}-npm-package":

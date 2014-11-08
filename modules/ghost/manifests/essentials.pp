@@ -13,7 +13,8 @@ class essentials {
     "libssl-dev",
     "git-core",
     "python",
-    "build-essential"
+    "build-essential",
+    "libpq-dev"
     ]:
   }
 
