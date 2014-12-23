@@ -1,5 +1,5 @@
 
-class ghost($node_version = "v0.10.33") {
+class ghost($node_version = "v0.10.34") {
     # Add some default path values
     Exec { path => ['/usr/local/bin','/usr/local/sbin','/usr/bin/','/usr/sbin','/bin','/sbin', "/home/vagrant/nvm/${node_version}/bin"], }
 
