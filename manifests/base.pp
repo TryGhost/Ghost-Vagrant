@@ -1,5 +1,5 @@
 
-$node_version = "v0.10.33"
+$node_version = "v0.10.34"
 
 file { '/etc/motd':
 	content => "
@@ -7,7 +7,7 @@ file { '/etc/motd':
     .' -   - '.       Ghost Dev VM
    /  .-. .-.  \\      - Version: 2.0 (Casper)
    |  | | | |  |       
-    \\ \\o/ \\o/ /       - OS:      Ubuntu precise-server-cloudimg-amd64
+    \\ \\o/ \\o/ /       - OS:      Ubuntu trusty-server-cloudimg-amd64
    _/    ^    \\_      - Node:    ${node_version}
   | \\  '---'  / |     - IP:      192.168.33.10
   / /`--. .--`\\ \\     - Code:    ~/code/Ghost
