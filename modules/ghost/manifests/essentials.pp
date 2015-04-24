@@ -1,4 +1,4 @@
-# Take from openbadges setup.
+# Source: http://www.mydevplayground.info/openbadges/.puppet-manifests/essentials.pp
 
 class essentials {
   group { "puppet" :
@@ -22,9 +22,4 @@ class essentials {
     ensure => "directory",
   }
 
-  #file { "/usr/local":
-  #  recurse => true,
-  #  group => "vagrant",
-  #  owner => "vagrant";
-  #}
 }
