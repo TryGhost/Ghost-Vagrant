@@ -6,7 +6,7 @@ Vagrant setup for developing [Ghost](https://ghost.org)
 
 - Install the latest versions of [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads.html).
 	- Linux users will also need to run `sudo apt-get install nfs-common nfs-kernel-sever`.
-- Clone this repo with `git clone --recursive git://github.com/TryGhost/Ghost-Vagrant.git`. *Note*: Use `git clone --recursive git://github.com/cwonrails/Ghost-Vagrant.git` until this fork is merged!
+- Clone this repo with `git clone --recursive git://github.com/TryGhost/Ghost-Vagrant.git`.
 - `cd` into the cloned repo.
 - Clone the Ghost master repo with `git clone git://github.com/Tryghost/Ghost.git` (_case matters!_)
 - Enter `echo '192.168.33.10 local.tryghost.org' | sudo tee -a /etc/hosts > /dev/null` to configure URL forwarding.
@@ -27,11 +27,12 @@ Vagrant setup for developing [Ghost](https://ghost.org)
 #### 3.0
 - Vagrantfile: Removed comments, removed symlink hack, changed Ghost source path, changed default box name (now attempts to pull from Atlas before using box URL as a fallback.)
 - Updated phantomjs version to 1.9.8
-- Changed Upstart default behavior to manual.
+- Added a one-liner for updating `/etc/hosts`.
 - Updated Puppet submodule commit references.
-- Made significant changes to README.md content, formatting, and structure.
+- Changed Upstart default behavior to manual.
 - Removed `npm install` and `grunt init` from the provisioning process for better installation debugging.
-- Miscellaneous changes throughout module code (correcting broken links etc.)
+- Made significant changes to README.md content, formatting, and structure.
+- Made a few small changes to comments in module code (correcting links etc.)
 
 #### 2.0
 
