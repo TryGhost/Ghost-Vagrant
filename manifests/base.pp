@@ -1,16 +1,15 @@
-
 $node_version = "v0.10.38"
 
 file { '/etc/motd':
 	content => "
       .-----.
-    .' -   - '.       Ghost Dev VM
-   /  .-. .-.  \\      - Version: 2.0 (Casper)
-   |  | | | |  |       
+    .' -   - '.       Ghost-Vagrant 3.0
+   /  .-. .-.  \\
+   |  | | | |  |
     \\ \\o/ \\o/ /       - OS:      Ubuntu trusty-server-cloudimg-amd64
-   _/    ^    \\_      - Node:    ${node_version}
-  | \\  '---'  / |     - IP:      192.168.33.10
-  / /`--. .--`\\ \\     - Code:    ~/code/Ghost
+   _/    ^    \\_	 - Node:    ${node_version}
+  | \\  '---'  / |       - IP:      192.168.33.10
+  / /`--. .--`\\ \\      - Code:    ~/code/Ghost
  / /'---` `---'\\ \\
  '.__.       .__.'
      `|     |`

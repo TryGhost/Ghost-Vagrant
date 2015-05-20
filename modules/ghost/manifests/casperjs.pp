@@ -1,24 +1,22 @@
-#  Install casperjs stuff
+#  Install and symlink casperjs and phantomjs
 
 class casperjs {
 
     file { "phantomjs-src":
-      path => "/home/vagrant/software/phantomjs-1.9.7-linux-x86_64.tar.bz2",
-      source => "puppet:///modules/ghost/software/phantomjs-1.9.7-linux-x86_64.tar.bz2",
+      path => "/home/vagrant/software/phantomjs-1.9.8-linux-x86_64.tar.bz2",
+      source => "puppet:///modules/ghost/software/phantomjs-1.9.8-linux-x86_64.tar.bz2",
     }
 
     exec { "extract-phantomjs":
         cwd => "/home/vagrant/software",
-        command => "/bin/tar xvjf phantomjs-1.9.7-linux-x86_64.tar.bz2",
-        creates => "/home/vagrant/software/phantomjs-1.9.7-linux-x86_64",
+        command => "/bin/tar xvjf phantomjs-1.9.8-linux-x86_64.tar.bz2",
+        creates => "/home/vagrant/software/phantomjs-1.9.8-linux-x86_64",
         require => [File["phantomjs-src"]]
     }
 
-
-
     exec { "link-phantomjs":
-        cwd => "/home/vagrant/software/phantomjs-1.9.7-linux-x86_64",
-        command => "/bin/ln -sf /home/vagrant/software/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs",
+        cwd => "/home/vagrant/software/phantomjs-1.9.8-linux-x86_64",
+        command => "/bin/ln -sf /home/vagrant/software/phantomjs-1.9.8-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs",
         creates => "/usr/local/bin/phantomjs",
         require => [Exec["extract-phantomjs"]]
     }
