@@ -17,6 +17,8 @@ Vagrant.configure("2") do |config|
 
   config.cache.scope = :box
 
+  config.librarian_puppet.placeholder_filename = ".gitkeep"
+
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
     puppet.manifest_file = "base.pp"
