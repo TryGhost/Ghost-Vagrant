@@ -6,10 +6,13 @@ Vagrant setup for developing [Ghost](https://ghost.org)
 
 - Install the latest versions of [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads.html).
 	- Linux users will also need to run `sudo apt-get install nfs-common nfs-kernel-sever`.
+- Install required Vagrant plugins:
+```
+vagrant plugin install vagrant-hostsupdater
+```
 - Clone this repo with `git clone --recursive git://github.com/TryGhost/Ghost-Vagrant.git`.
 - `cd` into the cloned repo.
 - Clone the Ghost master repo with `git clone git://github.com/Tryghost/Ghost.git` (_case matters!_)
-- Enter `echo '192.168.33.10 local.tryghost.org' | sudo tee -a /etc/hosts > /dev/null` to configure URL forwarding.
 - Enter `vagrant up` to create your new Vagrant box and `vagrant ssh` to log in.
 - After logging into your box enter `cd /code/Ghost` and install Ghost by running `npm install` and `grunt init`.
 - Enter `npm start`
