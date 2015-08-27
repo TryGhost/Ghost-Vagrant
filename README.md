@@ -8,6 +8,7 @@ Vagrant setup for developing [Ghost](https://ghost.org)
 	- Linux users will also need to run `sudo apt-get install nfs-common nfs-kernel-sever`.
 - Install required Vagrant plugins:
 ```
+vagrant plugin install vagrant-cachier
 vagrant plugin install vagrant-hostsupdater
 ```
 - Clone this repo with `git clone --recursive git://github.com/TryGhost/Ghost-Vagrant.git`.
