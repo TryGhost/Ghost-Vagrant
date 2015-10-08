@@ -11,8 +11,11 @@ Vagrant setup for developing [Ghost](https://ghost.org)
 - Clone the Ghost master repo with `git clone git://github.com/Tryghost/Ghost.git` (_case matters!_)
 - Enter `echo '192.168.33.10 local.tryghost.org' | sudo tee -a /etc/hosts > /dev/null` to configure URL forwarding.
 - Enter `vagrant up` to create your new Vagrant box and `vagrant ssh` to log in.
-- After logging into your box enter `cd /code/Ghost` and install Ghost by running `npm install` and `grunt init`.
+- After logging into your box enter `cd code/Ghost` and install Ghost by running `npm install` and `grunt init`.
+-
 - Enter `npm start`
+
+On the host you should now be able to access Ghost by navigating to `local.tryghost.org` or `192.168.33.10`. Make sure to update the development URL to `http://local.tryghost.org` in `Ghost/config.js`.
 
 ## Stopping and Starting Ghost
 
