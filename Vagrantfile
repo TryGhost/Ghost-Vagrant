@@ -1,6 +1,23 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# Install required Vagrant plugins
+missing_plugins_installed = false
+required_plugins = %w(vagrant-cachier vagrant-hostsupdater vagrant-librarian-puppet)
+
+required_plugins.each do |plugin|
+  if !Vagrant.has_plugin? plugin
+    system "vagrant plugin install #{plugin}"
+    missing_plugins_installed = true
+  end
+end
+
+# If any plugins were missing and have been installed, re-run vagrant
+if missing_plugins_installed
+  exec "vagrant #{ARGV.join(" ")}"
+end
+
+# Configure Vagrant
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
 
