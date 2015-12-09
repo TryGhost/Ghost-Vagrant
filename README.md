@@ -16,7 +16,7 @@ vagrant plugin install vagrant-librarian-puppet
 - `cd` into the cloned repo.
 - Clone the Ghost master repo with `git clone git://github.com/Tryghost/Ghost.git` (_case matters!_)
 - Enter `vagrant up` to create your new Vagrant box and `vagrant ssh` to log in.
-- After logging into your box enter `cd ~/code/Ghost` and install Ghost by running `npm install` and `grunt init`.
+- After logging into your box enter `cd code/Ghost` and install Ghost by running `npm install` and `grunt init`.
 - Enter `npm start`
 
 On the host you should now be able to access Ghost by navigating to `local.tryghost.org` or `192.168.33.10`. Make sure to update the development URL to `http://local.tryghost.org` in `Ghost/config.js`.
@@ -55,4 +55,4 @@ On the host you should now be able to access Ghost by navigating to `local.trygh
 
 ## Copyright & License
 
-opyright (c) 2013-2015 Ghost Foundation - Released under the [MIT license](LICENSE).
+Copyright (c) 2013-2015 Ghost Foundation - Released under the [MIT license](LICENSE).
