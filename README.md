@@ -6,12 +6,6 @@ Vagrant setup for developing [Ghost](https://ghost.org)
 
 - Install the latest versions of [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads.html).
 	- Linux users will also need to run `sudo apt-get install nfs-common nfs-kernel-sever`.
-- Install required Vagrant plugins:
-```
-vagrant plugin install vagrant-cachier
-vagrant plugin install vagrant-hostsupdater
-vagrant plugin install vagrant-librarian-puppet
-```
 - Clone this repo with `git clone git://github.com/TryGhost/Ghost-Vagrant.git`.
 - `cd` into the cloned repo.
 - Clone the Ghost master repo with `git clone git://github.com/Tryghost/Ghost.git` (_case matters!_)
