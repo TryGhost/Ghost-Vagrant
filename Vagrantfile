@@ -1,5 +1,17 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+require "yaml"
+
+# Load in external config
+config_file = "#{File.dirname(__FILE__)}/vm_config.yml"
+default_config_file = "#{File.dirname(__FILE__)}/.vm_config_default.yml"
+
+if !File.file? config_file
+  puts "Creating vm_config.yml..."
+  FileUtils.cp default_config_file, config_file
+end
+
+vm_external_config = YAML.load_file(config_file)
 
 # Install required Vagrant plugins
 missing_plugins_installed = false
@@ -23,13 +35,13 @@ Vagrant.configure("2") do |config|
 
   config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
 
-  config.vm.network :private_network, ip: "192.168.33.10"
-  config.vm.hostname = "local.tryghost.org"
+  config.vm.network :private_network, ip: vm_external_config["ip"]
+  config.vm.hostname = vm_external_config["hostname"]
 
-  config.vm.synced_folder "./Ghost", "/home/vagrant/code/Ghost", :nfs => true
+  config.vm.synced_folder vm_external_config["ghost_path"], "/home/vagrant/code/Ghost", :nfs => true
 
   config.vm.provider :virtualbox do |vb|
-    vb.customize ["modifyvm", :id, "--memory", "1024"]
+    vb.customize ["modifyvm", :id, "--memory", vm_external_config["memory"]]
   end
 
   config.cache.scope = :box

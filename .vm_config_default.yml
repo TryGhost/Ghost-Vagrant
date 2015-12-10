@@ -1,0 +1,4 @@
+hostname: local.tryghost.org
+ip: 192.168.33.10
+memory: 1024
+ghost_path: ./Ghost
