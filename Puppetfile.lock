@@ -1,12 +1,16 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
+    puppet-archive (0.4.4)
+      puppetlabs-pe_gem (>= 0.0.1)
+      puppetlabs-stdlib (>= 2.2.1)
     puppetlabs-apt (1.8.0)
       puppetlabs-stdlib (>= 2.2.1)
     puppetlabs-concat (1.2.4)
       puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
     puppetlabs-mysql (2.3.1)
       puppetlabs-stdlib (>= 3.2.0)
+    puppetlabs-pe_gem (0.1.2)
     puppetlabs-postgresql (4.3.0)
       puppetlabs-apt (< 2.0.0, >= 1.8.0)
       puppetlabs-concat (< 2.0.0, >= 1.1.0)
@@ -21,6 +25,7 @@ PATH
 
 DEPENDENCIES
   ghost-ghost (>= 0)
+  puppet-archive (~> 0.4.4)
   puppetlabs-concat (~> 1.2.0)
   puppetlabs-mysql (~> 2.3.0)
   puppetlabs-postgresql (~> 4.3.0)
