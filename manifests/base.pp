@@ -1,4 +1,4 @@
-$node_version = "v0.10.38"
+$node_version = "v0.10.41"
 
 file { '/etc/motd':
 	content => "
