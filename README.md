@@ -19,6 +19,24 @@ On the host you should now be able to access Ghost by navigating to `local.trygh
 
 - _After_ running `npm install`, `grunt init`, and `npm start`, you can stop and start Ghost by running `sudo stop app` and `sudo start app` _inside_ your box.
 
+## Configuring the VM
+
+You can configure various properties of the VM by creating a file named `vm_config.yml` in the root directory. The following properties are configurable:
+
+- **hostname** - URI that will be used to access Ghost from the browser
+- **ip** - IP address assigned to the virtual machine
+- **memory** - Amount of memory the virtual machine should have
+- **ghost_path** - Path to Ghost installation
+
+```yml
+hostname: local.tryghost.org
+ip: 192.168.33.10
+memory: 1024
+ghost_path: ./Ghost
+```
+
+If you do not have a `vm_config.yml` file when you first run `vagrant up`, one will be automatically created with the default values.
+
 ## Developing and Running Tests
 
 - See the [working on ghost core](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md#core) section of the Ghost [contributing guide](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md).
