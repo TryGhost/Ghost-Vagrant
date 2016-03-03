@@ -8,7 +8,7 @@ file { '/etc/motd':
    |  | | | |  |
     \\ \\o/ \\o/ /       - OS:      Ubuntu trusty-server-cloudimg-amd64
    _/    ^    \\_	 - Node:    ${node_version}
-  | \\  '---'  / |       - IP:      192.168.33.10
+  | \\  '---'  / |       - IP:      ${ipaddress_eth1}
   / /`--. .--`\\ \\      - Code:    ~/code/Ghost
  / /'---` `---'\\ \\
  '.__.       .__.'
@@ -26,4 +26,3 @@ file { '/etc/motd':
 class { ghost:
 	node_version => $node_version
 }
-
