@@ -1,23 +1,77 @@
 # Ghost-Vagrant
 
-Vagrant setup for developing [Ghost](https://ghost.org)
+A development environment for [Ghost](https://ghost.org) using [Vagrant](http://www.vagrantup.com/downloads.html).
 
-## Instructions
+## Prerequisites
 
-- Install the latest versions of [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads.html).
-	- Linux users will also need to run `sudo apt-get install nfs-common nfs-kernel-server`.
-- Clone this repo with `git clone git://github.com/TryGhost/Ghost-Vagrant.git`.
-- `cd` into the cloned repo.
-- Clone the Ghost master repo with `git clone git://github.com/Tryghost/Ghost.git` (_case matters!_)
-- Enter `vagrant up` to create your new Vagrant box and `vagrant ssh` to log in.
-- After logging into your box enter `cd code/Ghost` and install Ghost by running `npm install` and `grunt init`.
-- Enter `npm start`
+You will need the following applications to setup the Ghost development environment:
 
-On the host you should now be able to access Ghost by navigating to `local.tryghost.org` or `192.168.33.10`. Make sure to update the development URL to `http://local.tryghost.org` in `Ghost/config.js`.
+- [Vagrant](http://www.vagrantup.com/downloads.html)
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- [Git](https://git-scm.com/downloads)
+
+Linux users will also need `nfs-common` and `nfs-kernel-server`
+
+```bash
+sudo apt-get install nfs-common nfs-kernel-sever
+```
+
+## Setup
+
+To get started with the Ghost development environment, you will first need to clone this repo and navigate into it:
+
+```bash
+git clone git://github.com/TryGhost/Ghost-Vagrant.git
+cd Ghost-Vagrant
+```
+
+You will now need a copy of Ghost itself:
+
+```bash
+git clone git://github.com/Tryghost/Ghost.git
+```
+
+Now we have both repos cloned, we can proceed with setting up the VM:
+
+```bash
+vagrant up
+```
+
+Once the VM has been setup, you will need to log in to the VM and setup Ghost:
+
+```bash
+vagrant ssh
+
+# When logged into the VM...
+
+cd code/Ghost
+npm install
+grunt init
+```
+
+On the host you should now be able to access Ghost by navigating to `local.tryghost.org` or `192.168.33.10` in your browser. Make sure to update the development URL to `http://local.tryghost.org` in `Ghost/config.js`.
 
 ## Stopping and Starting Ghost
 
-- _After_ running `npm install`, `grunt init`, and `npm start`, you can stop and start Ghost by running `sudo stop app` and `sudo start app` _inside_ your box.
+Once you have been through the setup process above, you can stop Ghost by logging in to the VM (`vagrant ssh`) and running:
+
+```bash
+sudo stop app
+```
+
+To start Ghost again run:
+
+```bash
+sudo start app
+```
+
+If you do not want to use the service for starting and stopping Ghost, you can alternatively run:
+
+```bash
+npm start
+```
+
+This is useful when you want to debug what Ghost is doing when it boots up, what URLs are being accessed etc.
 
 ## Configuring the VM
 
@@ -35,35 +89,11 @@ memory: 1024
 ghost_path: ./Ghost
 ```
 
-If you do not have a `vm_config.yml` file when you first run `vagrant up`, one will be automatically created with the default values.
+If `vm_config.yml` is not present when you first run `vagrant up`, it will be automatically created with the default values found in [.vm_config_default.yml](.vm_config_default.yml).
 
 ## Developing and Running Tests
 
-- See the [working on ghost core](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md#core) section of the Ghost [contributing guide](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md).
-
-## Changelog
-
-#### 3.0
-- Vagrantfile: Removed comments, removed symlink hack, changed Ghost source path, changed default box name (now attempts to pull from Atlas before using box URL as a fallback.)
-- Updated phantomjs version to 1.9.8
-- Added a one-liner for updating `/etc/hosts`.
-- Updated Puppet submodule commit references.
-- Changed Upstart default behavior to manual.
-- Removed `npm install` and `grunt init` from the provisioning process for better installation debugging.
-- Made significant changes to README.md content, formatting, and structure.
-- Made a few small changes to comments in module code (correcting links etc.)
-
-#### 2.0
-
-- Switched to Ubuntu 14.04 LTS image
-
-#### 1.2
-
-- Changed the Ghost shared folder path to `/home/vagrant/code/Ghost`
-
-#### 1.1
-
-- Changed Compass to Bourbon as an automatic gem install
+See the [working on Ghost core](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md#core) section of the Ghost [contributing guide](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md).
 
 ## Copyright & License
 
