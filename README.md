@@ -12,24 +12,24 @@ You will need the following applications to setup the Ghost development environm
 
 Linux users will also need `nfs-common` and `nfs-kernel-server`
 
-Windows users should install Vagrant to a directory with no spaces in the path
-
 ```bash
 sudo apt-get install nfs-common nfs-kernel-sever
 ```
 
+Windows users should install Vagrant to a directory with no spaces in the path
+
 ## Setup
 
-To get started with the Ghost development environment, you will first need to clone this repo and navigate into it:
+To get started with the Ghost development environment, you will first need to clone this repo:
 
 ```bash
 git clone git://github.com/TryGhost/Ghost-Vagrant.git
-cd Ghost-Vagrant
 ```
 
-You will now need a copy of Ghost itself, cloned into your new local Ghost-Vagrant repo:
+Clone the Ghost repo into your new local Ghost-Vagrant repo:
 
 ```bash
+cd Ghost-Vagrant
 git clone git://github.com/Tryghost/Ghost.git
 ```
 
