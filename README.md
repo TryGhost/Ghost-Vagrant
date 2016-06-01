@@ -97,6 +97,16 @@ If `vm_config.yml` is not present when you first run `vagrant up`, it will be au
 
 See the [working on Ghost core](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md#core) section of the Ghost [contributing guide](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md).
 
+## Troubleshooting
+
+If `grunt init` failes due to an `npm` error `EEXIST` regarding a `.lock` file, try:
+
+```
+rm -rf core/client/node_modules
+npm cache clear
+grunt init
+```
+
 ## Copyright & License
 
 Copyright (c) 2013-2016 Ghost Foundation - Released under the [MIT license](LICENSE).
