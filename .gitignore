@@ -1,12 +1,20 @@
-.vagrant
+# OS Files
 .DS_Store
+
+# Local Vagrant Files
+.vagrant
 vm_config.yml
 
-.idea/*
-*.iml
-projectFilesBackup
-
-.tmp
+# Local Librarian Files
 .librarian
 modules/*
 !modules/.gitkeep
+.tmp
+
+# Local Ghost Repo Clone
+Ghost/*
+
+# Other
+.idea/*
+*.iml
+projectFilesBackup

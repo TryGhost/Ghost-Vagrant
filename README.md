@@ -10,24 +10,26 @@ You will need the following applications to setup the Ghost development environm
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [Git](https://git-scm.com/downloads)
 
-Linux users will also need `nfs-common` and `nfs-kernel-server`
+Linux users will also need `nfs-common` and `nfs-kernel-server`:
 
 ```bash
 sudo apt-get install nfs-common nfs-kernel-sever
 ```
 
+Windows users should install Vagrant to a directory with no spaces in the path.
+
 ## Setup
 
-To get started with the Ghost development environment, you will first need to clone this repo and navigate into it:
+To get started with the Ghost development environment, you will first need to clone this repo:
 
 ```bash
 git clone git://github.com/TryGhost/Ghost-Vagrant.git
-cd Ghost-Vagrant
 ```
 
-You will now need a copy of Ghost itself:
+Clone the Ghost repo into your new local Ghost-Vagrant repo:
 
 ```bash
+cd Ghost-Vagrant
 git clone git://github.com/Tryghost/Ghost.git
 ```
 
@@ -75,7 +77,7 @@ This is useful when you want to debug what Ghost is doing when it boots up, what
 
 ## Configuring the VM
 
-You can configure various properties of the VM by creating a file named `vm_config.yml` in the root directory. The following properties are configurable:
+You can configure various properties of the VM by creating a file named `vm_config.yml` in the `Ghost-Vagrant` root directory. The following properties are configurable:
 
 - **hostname** - URI that will be used to access Ghost from the browser
 - **ip** - IP address assigned to the virtual machine
@@ -94,6 +96,16 @@ If `vm_config.yml` is not present when you first run `vagrant up`, it will be au
 ## Developing and Running Tests
 
 See the [working on Ghost core](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md#core) section of the Ghost [contributing guide](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md).
+
+## Troubleshooting
+
+If `grunt init` failes due to an `npm` error `EEXIST` regarding a `.lock` file, try:
+
+```
+rm -rf core/client/node_modules
+npm cache clear
+grunt init
+```
 
 ## Copyright & License
 
