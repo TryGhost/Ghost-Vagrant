@@ -13,7 +13,7 @@ You will need the following applications to setup the Ghost development environm
 Linux users will also need `nfs-common` and `nfs-kernel-server`:
 
 ```bash
-sudo apt-get install nfs-common nfs-kernel-sever
+sudo apt-get install nfs-common nfs-kernel-server
 ```
 
 Windows users should install Vagrant to a directory with no spaces in the path.
@@ -99,7 +99,7 @@ See the [working on Ghost core](https://github.com/TryGhost/Ghost/blob/master/CO
 
 ## Troubleshooting
 
-If `grunt init` failes due to an `npm` error `EEXIST` regarding a `.lock` file, try:
+If `grunt init` fails due to an `npm` error `EEXIST` regarding a `.lock` file, try:
 
 ```
 rm -rf core/client/node_modules
