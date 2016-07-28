@@ -95,7 +95,7 @@ If `vm_config.yml` is not present when you first run `vagrant up`, it will be au
 
 ## Developing and Running Tests
 
-See the [working on Ghost core](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md#core) section of the Ghost [contributing guide](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md).
+See the [working on Ghost core](https://github.com/TryGhost/Ghost/blob/master/.github/CONTRIBUTING.md#core) section of the Ghost [contributing guide](https://github.com/TryGhost/Ghost/blob/master/.github/CONTRIBUTING.md).
 
 ## Troubleshooting
 
