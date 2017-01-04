@@ -109,4 +109,4 @@ grunt init
 
 ## Copyright & License
 
-Copyright (c) 2013-2016 Ghost Foundation - Released under the [MIT license](LICENSE).
+Copyright (c) 2013-2017 Ghost Foundation - Released under the [MIT license](LICENSE).
