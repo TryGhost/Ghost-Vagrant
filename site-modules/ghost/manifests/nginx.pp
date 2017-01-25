@@ -3,7 +3,7 @@ class nginx {
     ensure => installed,
     before => File['nginx-conf'];
   }
-  
+
   service { 'nginx':
     ensure => running,
     enable => true,

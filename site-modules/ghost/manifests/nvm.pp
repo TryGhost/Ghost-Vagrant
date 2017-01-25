@@ -1,4 +1,4 @@
-# Source: http://www.mydevplayground.info/openbadges/.puppet-manifests/nvm.pp 
+# Source: http://www.mydevplayground.info/openbadges/.puppet-manifests/nvm.pp
 
 class nvm ($node_version) {
 
@@ -6,13 +6,13 @@ class nvm ($node_version) {
     path => ['/usr/local/bin','/usr/local/sbin','/usr/bin/','/usr/sbin','/bin','/sbin'],
   }
 
-  exec { "set-node-version": 
+  exec { "set-node-version":
     command => "bash -c \"source /home/vagrant/nvm/nvm.sh && nvm alias default ${node_version}\"",
     require => Exec["install-node"],
     unless => "bash -c \"source /home/vagrant/nvm/nvm.sh && nvm ls | grep -qc \"default -> ${node_version}\"",
   }
 
-  exec { "install-node": 
+  exec { "install-node":
     command => "bash -c \"source /home/vagrant/nvm/nvm.sh && nvm install ${node_version}\"",
     require => Exec["clone-nvm"],
     creates => "/home/vagrant/nvm/${node_version}",
@@ -21,7 +21,7 @@ class nvm ($node_version) {
 
   # Ensure proper permissions for nvm (and node in general)
   file { "set-node-permissions":
-    path => "/home/vagrant/nvm/${node_version}", 
+    path => "/home/vagrant/nvm/",
     ensure => "directory",
     recurse => true,
     owner  => "vagrant",
