@@ -1,0 +1,3 @@
+[submodule "Ghost"]
+	path = Ghost
+	url = git://github.com/Tryghost/Ghost.git
