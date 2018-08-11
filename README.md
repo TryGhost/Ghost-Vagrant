@@ -30,7 +30,8 @@ Clone the Ghost repo into your new local Ghost-Vagrant repo:
 
 ```bash
 cd Ghost-Vagrant
-git clone git://github.com/Tryghost/Ghost.git
+git submodule init
+git submodule update
 ```
 
 Now we have both repos cloned, we can proceed with setting up the VM:
